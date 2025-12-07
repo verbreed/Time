@@ -28,7 +28,6 @@ jobs:
             - name: Install Dependencies
               run: |
                   pip install --upgrade pip
-                  pip install pygbag
                   pip install -r requirements.txt
 
             - name: Build game
