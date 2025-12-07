@@ -1,4 +1,4 @@
-import pygame
+import pygame,sys
 from pathlib import Path
 
 #============================================================
@@ -47,7 +47,10 @@ CARD_PASS                         = 'card_pass.png'
 # FUNCTIONS TO GENERATE GLOBALS
 #============================================================
 def get_image_path(filename):
-    return Path(__file__).parent.parent / 'assets' / filename
+    if sys.platform == 'emscripten':
+        return f'assets/{filename}'
+    else:
+        return Path(__file__).parent.parent / 'assets' / filename
 
 globals_images_dict = {
     'turn_opponent'     :'turn_opponent.png',
