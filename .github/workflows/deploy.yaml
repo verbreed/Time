@@ -1,0 +1,23 @@
+name: Deploy Pygbag Game
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-python@v4
+              with:
+                    python-version: '3.11'
+            - name: Build with pygbag
+              run: |
+                    pip install pygbag
+                    pygbag --build time/
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                    github_token: $ secrets.GITHUB_TOKEN
+                    publish_dir: ./build/web

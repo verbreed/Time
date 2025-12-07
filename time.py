@@ -1,4 +1,4 @@
-import pygame, sys, math, random, cProfile
+import pygame,sys,asyncio
 from helper_functions import *
 from helper_functions.globals import *
 from helper_functions.player.movelists import *
@@ -39,7 +39,8 @@ from pygame.locals import *
 #==========================================================
 # SETUP MAIN + MAIN
 #==========================================================
-def __main__():
+async def __main__():
+  running = True
   mousex = 0
   mousey = 0
 
@@ -50,7 +51,11 @@ def __main__():
   enemy_team.establishteam()
   player.setuphand(7)
   
-  while True:
+  while running:
+    for event in pygame.event.get():
+      if event.type == QUIT:
+        running = False
+
     pygame.font.init()
     growTimer = pygame.time.get_ticks()
     DISPLAYSURF.fill(WHITE)
@@ -91,6 +96,8 @@ def __main__():
     drawturn(player, enemy_team)
     pygame.display.update()
     fpsClock.tick(FPS)
+    await asyncio.sleep(0)
+  
+  pygame.quit()
 
-cProfile.run('__main__()')
-__main__()
+asyncio.run(__main__())
