@@ -39,7 +39,7 @@ from pygame.locals import *
 #==========================================================
 # SETUP MAIN + MAIN
 #==========================================================
-async def __main__():
+async def main():
   running = True
   mousex = 0
   mousey = 0
@@ -100,4 +100,5 @@ async def __main__():
   
   pygame.quit()
 
-asyncio.run(__main__())
+if __name__ == '__main__':
+  asyncio.run(main())
