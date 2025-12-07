@@ -10,7 +10,7 @@ fpsClock = pygame.time.Clock()
 DISPLAYSURF = None
 def init_display():
     global DISPLAYSURF
-    DISPLAYSURF = pygame.display.set_mode((500,500))
+    DISPLAYSURF = pygame.display.set_mode((1024,600))
 
 BOARDWIDTH  = 8
 BOARDHEIGHT = 8
