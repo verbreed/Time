@@ -45,6 +45,7 @@ async def main():
   mousey = 0
 
   pygame.display.set_caption('time')
+  pygame.font.init()
   player = createplayerstate()
   board = createboardstate()
   enemy_team = createenemystate()
@@ -52,7 +53,6 @@ async def main():
   player.setuphand(7)
   
   while running:
-    pygame.font.init()
     growTimer = pygame.time.get_ticks()
     DISPLAYSURF.fill(WHITE)
     boardtype = 'grassy_plains'
