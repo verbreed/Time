@@ -47,7 +47,7 @@ CARD_PASS                         = 'card_pass.png'
 # FUNCTIONS TO GENERATE GLOBALS
 #============================================================
 def get_image_path(filename):
-    return Path(__file__).parent.parent / 'images' / filename
+    return Path(__file__).parent.parent / 'assets' / filename
 
 globals_images_dict = {
     'turn_opponent'     :'turn_opponent.png',
