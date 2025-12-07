@@ -1,2 +1,2 @@
 pygame==2.6.1
-pygbag==0.8.7
+pygbag==0.8.6
