@@ -1,7 +1,7 @@
 import random
 from helper_functions.globals import *
 from helper_functions.pieces import *
-from timer import *
+from time import *
 
 def checkforwin(player, enemy):
   if len(enemy.enemylist) == 0:
