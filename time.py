@@ -91,6 +91,7 @@ async def main():
       drawturn(player, enemy_team)
       pygame.display.update()
       fpsClock.tick(FPS)
+      await asyncio.sleep(0)
   
   pygame.quit()
 
