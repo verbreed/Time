@@ -15,6 +15,7 @@ jobs:
             - name: Build with pygbag
               run: |
                     pip install pygbag
+                    pip install pygame
                     pygbag --build time/
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
