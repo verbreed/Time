@@ -1,4 +1,4 @@
-import timer
+from time import *
 from pygame.locals import *
 
 def settimer():

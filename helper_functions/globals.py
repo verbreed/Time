@@ -7,8 +7,10 @@ from pathlib import Path
 FPS = 30
 fpsClock = pygame.time.Clock()
 
-DISPLAYSURF = pygame.display.set_mode((500, 500))
-time = pygame.time.Clock()
+DISPLAYSURF = None
+def init_display():
+    global DISPLAYSURF
+    DISPLAYSURF = pygame.display.set_mode((500,500))
 
 BOARDWIDTH  = 8
 BOARDHEIGHT = 8

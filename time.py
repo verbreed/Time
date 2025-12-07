@@ -1,4 +1,4 @@
-import pygame,sys,asyncio
+import pygame,asyncio
 from helper_functions import *
 from helper_functions.globals import *
 from helper_functions.player.movelists import *
@@ -40,6 +40,10 @@ from pygame.locals import *
 # SETUP MAIN + MAIN
 #==========================================================
 async def main():
+  init_display()
+  global DISPLAYSURF
+  from helper_functions.globals import DISPLAYSURF
+  
   running = True
   mousex = 0
   mousey = 0
